@@ -1,0 +1,18 @@
+Defect Report
+
+Summary
+
+Description
+Actual result:
+Expected result:
+Requirement ID:
+Reproduced on:
+
+Steps to reproduce	
+1. ....
+2. ....
+3 ....
+
+Severity  
+Priority
+
