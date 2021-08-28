@@ -1,0 +1,21 @@
+https://sql-ex.ru/learn_exercises.php
+
+EX 1
+SELECT DISTINCT model, speed, hd
+FROM PC
+WHERE PRICE < 500
+================================
+
+EX 2
+SELECT maker
+FROM  Product 
+WHERE product.type = 'printer' 
+GROUP BY maker
+================================
+
+EX 3
+SELECT model, ram, screen
+FROM Laptop
+WHERE price > 1000
+
+
