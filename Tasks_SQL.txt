@@ -18,4 +18,81 @@ SELECT model, ram, screen
 FROM Laptop
 WHERE price > 1000
 
+EX 4
+SELECT *
+FROM Printer
+WHERE color='y'
+================================
+
+EX 5
+SELECT model, speed, hd
+FROM PC
+WHERE cd IN ('12x','24x')
+AND price<600
+
+SELECT model, speed, hd
+FROM PC
+WHERE cd='12x' OR cd='24x'
+AND price<600
+================================
+
+EX 6
+SELECT DISTINCT maker, speed
+FROM Laptop INNER JOIN Product ON Laptop.model=Product.model
+WHERE hd>=10
+ORDER BY maker, speed
+================================
+
+EX 7
+Select l.model, l.price  from laptop l join product on l.model = product.model
+where product.maker= 'B'
+union
+Select pc.model , pc.price from pc join product on pc.model = product.model
+where product.maker= 'B'
+union
+Select pr.model , pr.price from printer pr join product on pr.model = product.model
+where product.maker= 'B'
+================================
+
+EX 8
+SELECT DISTINCT maker
+FROM Product
+WHERE type = 'PC'
+AND maker NOT IN (SELECT maker
+FROM Product
+WHERE type = 'Laptop')
+
+select p1.maker from Product p1 where p1.type = 'PC'
+except
+select p2.maker from Product p2 where p2.type = 'Laptop'
+================================
+
+EX 9
+SELECT DISTINCT maker
+FROM PC INNER JOIN Product ON PC.model=Product.model
+WHERE speed >= 450
+================================
+
+EX 10
+SELECT model, price
+FROM Printer
+WHERE price IN (SELECT MAX (price) FROM Printer)
+================================
+
+EX 11
+SELECT AVG(speed)
+FROM PC
+================================
+
+EX 12
+SELECT AVG (speed)
+FROM Laptop
+WHERE price>1000
+================================
+
+EX 13
+SELECT AVG(speed)
+FROM PC JOIN Product ON pc.model=product.model
+WHERE maker='A'
+
 
